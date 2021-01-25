@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/title"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:text="แจ้งซ่อม"
+            android:textSize="30dp"
+            android:textStyle="italic" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            style="@style/MatchWrap"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/MatchWrap"
+                android:text="คณะ" />
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tv_agency_name"
+                style="@style/EditTextInput3"
+                android:hint="หน่วยงาน" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MatchWrap"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/MatchWrap"
+                android:text="เลขห้อง" />
+
+            <Spinner
+                android:id="@+id/bar_spinner_room"
+                style="@style/EditTextInput3"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MatchWrap"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/MatchWrap"
+                android:text="โค้ดอุปกรณ์" />
+
+            <Spinner
+                android:id="@+id/bar_spinner_device"
+                style="@style/EditTextInput3"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MatchWrap"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/MatchWrap"
+                android:text="ชื่ออุปกรณ์" />
+
+            <Spinner
+                android:id="@+id/bar_spinner_device_name"
+                style="@style/EditTextInput3"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MatchWrap"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/MatchWrap"
+                android:text="ปัญหาที่พบ" />
+
+            <Spinner
+                android:id="@+id/bar_spinner_problem"
+                style="@style/EditTextInput3"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="20dp">
+            <com.google.android.material.textfield.TextInputLayout style="@style/StyleTextInputLayoutV2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_detail"
+                    style="@style/EditTextInputV2"
+                    android:gravity="start"
+                    android:hint="รายละเอียด"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_repair"
+            style="@style/not"
+            android:layout_gravity="center"
+            android:background="@drawable/custorm_input"
+            android:text="แจ้งซ่อม"
+            android:textColor="#8F2F2F" />
+
+    </LinearLayout>
+
+</LinearLayout>

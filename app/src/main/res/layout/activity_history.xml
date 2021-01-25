@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/history"
+    tools:context=".HistoryActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ประวัติการแจ้งซ่อม"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"/>
+
+    </RelativeLayout>
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/relativeLayout"
+        android:id="@+id/btn_date"
+        android:text="วันที่"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/btn_date"
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        tools:listitem="@layout/item_history"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_marginTop="650dp"
+        android:id="@+id/bt_back"
+        android:text="ย้อนกลับ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

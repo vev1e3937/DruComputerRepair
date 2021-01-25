@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="et_width">260dp</dimen>
+    <dimen name="et_height">40dp</dimen>
+    <dimen name="base_pow_three">8dp</dimen>
+    <dimen name="base_pow_two">4dp</dimen>
+    <dimen name="base_pow_four">16dp</dimen>
+    <dimen name="text_large">22sp</dimen>
+    <dimen name="img_photo">120dp</dimen>
+    <dimen name="ic_base">24dp</dimen>
+    <dimen name="base_zero">0dp</dimen>
+</resources>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="EditTextInput">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:drawableStart">@drawable/ic_baseline_person_24</item>
+        <item name="android:background">@drawable/custorm_input</item>
+    </style>
+
+    <style name="StyleTextInputLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="errorEnabled">true</item>
+        <item name="counterEnabled">true</item>
+        <item name="counterMaxLength">10</item>
+    </style>
+    <style name="EditTextInput2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:drawableStart">@drawable/ic_baseline_vpn_key_24</item>
+        <item name="android:background">@drawable/custorm_input</item>
+    </style>
+    <style name="EditTextInput3">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@drawable/custorm_input</item>
+    </style>
+
+    <style name="MatchWrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="EditTextInputV2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:background">@drawable/custorm_input</item>
+    </style>
+
+    <style name="not">
+        <item name="android:layout_width">@dimen/et_width</item>
+        <item name="android:layout_height">@dimen/et_height</item>
+        <item name="android:layout_margin">@dimen/base_pow_three</item>
+        <!--        <item name="android:background">@drawable/shape_et</item>-->
+        <item name="android:elevation">@dimen/base_pow_two</item>
+        <item name="android:drawablePadding">@dimen/base_pow_three</item>
+    </style>
+
+    <style name="TextViewLargeApplicationSub" parent="TextViewLargeApplication">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="android:layout_marginStart">@dimen/base_pow_three</item>
+        <item name="android:layout_marginTop">@dimen/base_pow_four</item>
+    </style>
+
+    <style name="TextViewLargeApplication" parent="WrapWrap">
+        <item name="android:textSize">@dimen/text_large</item>
+        <!--        <item name="android:textColor">@color/colorGray</item>-->
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <style name="CardViewImageView" parent="WrapWrap">
+        <item name="android:layout_margin">@dimen/base_pow_three</item>
+        <item name="cardCornerRadius">60dp</item>
+        <item name="cardElevation">@dimen/base_pow_three</item>
+    </style>
+
+    <style name="WrapWrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ImageViewPhoto">
+        <item name="android:layout_width">@dimen/img_photo</item>
+        <item name="android:layout_height">@dimen/img_photo</item>
+        <item name="android:src">@drawable/ic_user</item>
+    </style>
+
+    <style name="ImageViewIcon">
+        <item name="android:layout_width">@dimen/ic_base</item>
+        <item name="android:layout_height">@dimen/ic_base</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginTop">@dimen/base_pow_four</item>
+    </style>
+</resources>
