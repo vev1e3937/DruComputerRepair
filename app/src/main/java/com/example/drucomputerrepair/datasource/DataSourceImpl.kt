@@ -1,17 +1,11 @@
 package com.example.drucomputerrepair.datasource
 
-import com.example.drucomputerrepair.data.database.Faculty
-import com.example.drucomputerrepair.data.database.Users
-import com.example.drucomputerrepair.data.map.FacultyMap
-import com.example.drucomputerrepair.data.map.ProfileMap
-import com.example.drucomputerrepair.data.models.FacultyModel
-import com.example.drucomputerrepair.data.models.ProfileModel
+import com.example.drucomputerrepair.data.database.*
+import com.example.drucomputerrepair.data.map.*
+import com.example.drucomputerrepair.data.models.*
 import com.example.drucomputerrepair.data.request.LoginRequest
 import com.example.drucomputerrepair.data.response.LoginResponse
-import org.jetbrains.exposed.sql.StdOutSqlLogger
-import org.jetbrains.exposed.sql.addLogger
-import org.jetbrains.exposed.sql.andWhere
-import org.jetbrains.exposed.sql.select
+import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
 
 object DataSourceImpl : DataSource {
@@ -74,6 +68,40 @@ object DataSourceImpl : DataSource {
                 .select { Users.user_id eq user }
                 .map {FacultyMap.toFaculty(it)}
                 .single()
+        }
+    }
+    override fun roomnumber(faculty:Int): List<RoomModel> {
+        return transaction {
+            addLogger(StdOutSqlLogger)
+            Room
+                .select{Room.faculty_id eq faculty}
+                .map { RoomMap.toRoom(it) }
+        }
+    }
+
+    override fun devicecode(room:Int): List<DeviceModel>{
+        return  transaction {
+            addLogger(StdOutSqlLogger)
+            Device
+                .select{Device.room_id eq room}
+                .map { DeviceMap.toDevice(it) }
+        }
+    }
+
+    override fun devicename(device_detail_id:Int): List<DeviceDetailModel>{
+        return transaction {
+            addLogger(StdOutSqlLogger)
+            DeviceDetail
+                .select{DeviceDetail.device_detail_id eq device_detail_id}
+                .map { DeviceDetailMap.toDeviceDetail(it) }
+        }
+    }
+    override fun problem ():List<ProblemModel>{
+        return transaction {
+            addLogger(StdOutSqlLogger)
+            Problem
+                .selectAll()
+                .map { ProblemMap.toProblem(it) }
         }
     }
 }

@@ -13,8 +13,8 @@
         android:theme="@style/Theme.DruComputerRepair">
         <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".HistoryActivity" />
-        <activity android:name=".RepairActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".presentation.repair.RepairActivity" />
+        <activity android:name=".presentation.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

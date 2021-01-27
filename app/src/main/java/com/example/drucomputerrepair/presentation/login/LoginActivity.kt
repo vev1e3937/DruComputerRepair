@@ -1,10 +1,11 @@
-package com.example.drucomputerrepair
+package com.example.drucomputerrepair.presentation.login
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.drucomputerrepair.MainActivity
+import com.example.drucomputerrepair.R
 import com.example.drucomputerrepair.data.request.LoginRequest
 import com.example.drucomputerrepair.ui.BaseActivity
 import com.example.drucomputerrepair.ui.hideSoftKeyboard
