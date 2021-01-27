@@ -38,10 +38,11 @@
                 android:text="คณะ" />
 
             <TextView
+
                 android:gravity="center"
-                android:id="@+id/tv_agency_name"
+                android:id="@+id/tv_faculty_name"
                 style="@style/EditTextInput3"
-                android:hint="หน่วยงาน" />
+                android:hint="คณะ" />
         </LinearLayout>
 
         <LinearLayout
@@ -106,7 +107,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="20dp">
-            <com.google.android.material.textfield.TextInputLayout style="@style/StyleTextInputLayoutV2">
+            <com.google.android.material.textfield.TextInputLayout style="@style/StyleTextInputLayoutv2">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edt_detail"

@@ -85,4 +85,9 @@
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:layout_marginTop">@dimen/base_pow_four</item>
     </style>
+    <style name="StyleTextInputLayoutv2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="errorEnabled">true</item>
+    </style>
 </resources>

@@ -1,6 +1,11 @@
 package com.example.drucomputerrepair.datasource
 
+import com.example.drucomputerrepair.data.database.Faculty
 import com.example.drucomputerrepair.data.database.Users
+import com.example.drucomputerrepair.data.map.FacultyMap
+import com.example.drucomputerrepair.data.map.ProfileMap
+import com.example.drucomputerrepair.data.models.FacultyModel
+import com.example.drucomputerrepair.data.models.ProfileModel
 import com.example.drucomputerrepair.data.request.LoginRequest
 import com.example.drucomputerrepair.data.response.LoginResponse
 import org.jetbrains.exposed.sql.StdOutSqlLogger
@@ -41,5 +46,34 @@ object DataSourceImpl : DataSource {
             }
         }
         return response
+    }
+
+    override fun profile(user:Int):ProfileModel{
+        return transaction {
+            addLogger(StdOutSqlLogger)
+            (Users innerJoin Faculty)
+                .slice(
+                    Users.identity_id,
+                    Users.full_name,
+                    Users.telephone,
+                    Faculty.faculty_name
+                )
+                .select { Users.user_id eq user }
+                .map { ProfileMap.toProfile(it) }
+                .single()
+        }
+    }
+    override fun faculty(user:Int):FacultyModel{
+        return transaction {
+            addLogger(StdOutSqlLogger)
+            (Users innerJoin  Faculty)
+                .slice(
+                    Faculty.faculty_id,
+                    Faculty.faculty_name
+                )
+                .select { Users.user_id eq user }
+                .map {FacultyMap.toFaculty(it)}
+                .single()
+        }
     }
 }

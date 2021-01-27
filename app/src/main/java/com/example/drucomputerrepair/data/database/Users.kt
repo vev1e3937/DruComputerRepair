@@ -10,6 +10,7 @@ object Users : Table("user") {
     val username = varchar("username", 50)
     val password = varchar("password", 10)
     val full_name = varchar("full_name", 50)
+    val identity_id = varchar("identity_id",50)
     val telephone = varchar("telephone", 10)
 
     override val primaryKey: PrimaryKey?
