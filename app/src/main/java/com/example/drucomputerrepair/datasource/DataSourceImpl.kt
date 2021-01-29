@@ -3,10 +3,13 @@ package com.example.drucomputerrepair.datasource
 import com.example.drucomputerrepair.data.database.*
 import com.example.drucomputerrepair.data.map.*
 import com.example.drucomputerrepair.data.models.*
+import com.example.drucomputerrepair.data.request.InsertJobRequest
 import com.example.drucomputerrepair.data.request.LoginRequest
+import com.example.drucomputerrepair.data.response.InsertJobResponse
 import com.example.drucomputerrepair.data.response.LoginResponse
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
+import org.joda.time.DateTime
 
 object DataSourceImpl : DataSource {
     override fun login(req: LoginRequest): LoginResponse {
@@ -103,5 +106,26 @@ object DataSourceImpl : DataSource {
                 .selectAll()
                 .map { ProblemMap.toProblem(it) }
         }
+    }
+    override fun insertjob (req:InsertJobRequest):InsertJobResponse {
+        val response = InsertJobResponse()
+
+        val statement = transaction {
+            addLogger(StdOutSqlLogger)
+
+            Repair.insert {
+                it[user_id] = req.user_id.toString().toInt()
+                it[employee_id]=0
+                it[problem_id] = req.problem_id.toString().toInt()
+                it[status_id] = 2
+                it[repair_date] = DateTime.now()
+                it[detail] = req.detail
+                it[device_id]=req.device_id.toString().toInt()
+            }
+        }
+        val result = statement.resultedValues?.size == 1
+        response.success = result
+        response.message = "Insert success"
+        return response
     }
 }
